@@ -1,0 +1,115 @@
+Date I Went Through Gitlab Tutorials: 02/27/2025
+Approximate Date I Setup my GitHub Account: Dec 2020 - Jan 2021
+
+
+1. splai@hennyx MINGW64 ~/assignment2 (master)
+$ git push
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 349 bytes | 349.00 KiB/s, done.
+Total 4 (delta 1), reused 1 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/usernameavail/assignment2.git
+   4271d81..bfa4444  master -> master
+
+2. Here are 3 different ways I found to look at the history:
+
+splai@hennyx MINGW64 ~/assignment2 (master)
+$ git rev-list --count HEAD
+12
+
+splai@hennyx MINGW64 ~/assignment2 (master)
+$ git shortlog -s
+     6  Esteban Parra
+     2  Shawn
+     4  usernameavail
+
+splai@hennyx MINGW64 ~/assignment2 (master)
+$ git log
+commit bfa444463ea3bcb659300c77c0534a0b6497b7ed (HEAD -> master, origin/master, origin/HEAD)
+Author: usernameavail <splain29@gmail.com>
+Date:   Thu Feb 27 21:52:58 2025 -0500
+
+    added answers.txt blank file
+
+commit 4271d81d4a7fbf2be1d3de9a5ae0a765581ab534
+Merge: c49c438 4780279
+Author: usernameavail <splain29@gmail.com>
+Date:   Thu Feb 27 21:45:57 2025 -0500
+
+    Merge branch 'master' of https://github.com/usernameavail/assignment2
+
+commit c49c438a657befa3001cf51382b5ba209db160d3
+Author: usernameavail <splain29@gmail.com>
+Date:   Thu Feb 27 21:44:32 2025 -0500
+
+    Added Docs folder \n The status.txt file has been filled out to show
+    status of console
+
+commit 47802791125ef8f60d4adb0f7f433a419f2262e9
+Author: Shawn <83796446+usernameavail@users.noreply.github.com>
+Date:   Thu Feb 27 21:43:01 2025 -0500
+
+    Updated README.md
+
+    The information files have been updated to describe the current state of the repository.
+
+    Repository owner information (stp23a) added to README.md
+
+commit 3d8a4f245a3dd2d774c7ea601c0b66a5fed54e70
+Author: Shawn <83796446+usernameavail@users.noreply.github.com>
+Date:   Thu Feb 27 21:42:14 2025 -0500
+
+    Update README.md
+
+    reset
+
+commit f8120abe7f4b62698d111f0883d2e3353318c699
+Author: usernameavail <splain29@gmail.com>
+Date:   Thu Feb 27 21:31:11 2025 -0500
+
+    hello this is a test message
+
+commit f4975e5d56ff331762b318bfd12c5236e0299f25
+Author: Esteban Parra <estebanpr014@gmail.com>
+Date:   Wed Sep 25 18:33:08 2019 -0400
+
+    -> Adding an empty README.md file
+
+commit e424a923e80da4772ca789591ef3326230062a71
+Author: Esteban Parra <estebanpr014@gmail.com>
+Date:   Wed Sep 25 18:13:30 2019 -0400
+
+    -> Tracking .gitignore
+
+commit 03106e92a1e36708334c69dd071088c6d0937b1d
+:
+
+
+3. As seen above, I used the git log command for this:
+
+commit 47802791125ef8f60d4adb0f7f433a419f2262e9
+Author: Shawn <83796446+usernameavail@users.noreply.github.com>
+Date:   Thu Feb 27 21:43:01 2025 -0500
+
+    Updated README.md
+
+    The information files have been updated to describe the current state of the repository.
+
+    Repository owner information (stp23a) added to README.md
+
+4. Two reasons why branch would be used in a repository would be the development of specific features, meaning that a developer could branch out and work specifically on a certain feature to be added into the program, and then later they could choose to merge it, therefore not working directly on the main and potentially causing issues with the code. Another reason to use branch is if a team has multiple devs working on the project at once, they could choose to branch and later merge or rebase the repository depending on the work of themselves and other devs.
+
+5. git log displays the commit history of the repository, as seen above, where git status shows the current state of the WORKING directory. This would show changes that are ready to commit, as well as the differences between the WD and the last commit in the repository.
+
+6.git log -- Vehicle.h
+
+7. git log --grep="file"
+
+8. In object-oriented programming, inheritance is defined as a child class that derives some properties and behaviors from a parent class or superclass. This promotes the ability to reuse code, as well as developing an internal hierarchy within the code. Polymorphism gives the ability to allow different classes to act as instances of a superclass, a good example would be an Animal superclass that has an animalSound() function that simply prints out "Default Sound". Using polymorphism, you could have a class that inherits the Animal superclass called Cat or Dog, that overrides the default animalSound() function to print their respective sounds. Encapsulation refers to the ability to control the level of access to object components within a class. For example, imagine you have a class of Car. In the Car class, you have a private variable for make and model. This means that, because these are private (encapsulated) variables, they can only be set by public methods of the class, and cannot be accessed directly.
+
+9. In an Integration Manager workflow, each of the developers working on a project have their own personal and private repositories, and they each will push from their own private to their own public repository, while pulling from the centralized repository. All the conflicts that arise for integration from the public devs repositories are handled by a dedicated member, the Integration Manager, who resolves conflicts and pushes to the central repository. In the Director and Lieutenants workflow, everyone once again pulls from a centralized repository, but the devs will push their changes to intermediate repositories, called Lieutenants repositories, solving conflicts, before being sent to the Director repository, handling any further conflicts and pushing to the central.
+
+10. A team of 100 developers is quite large. A centralized workflow could become quite a bottleneck for such a team, as each time a developer wants to commit changes, they would need to pull from the shared repository, then being forced to fix any and all conflicts that arise before being able to push their changes to the shared repository. They could benefit greatly from the Director and Lieutenants workflow by being able to push their changes into their assigned Lieutenant repositories, then allowing the Lieutenants to resolve conflicts by choosing what changes to merge. This would free up a lot of developer time, and therefore allow more work to be done as a whole.
